@@ -5,11 +5,21 @@ import 'package:intershipflutter/Presentation/Screens/UserScreens/Login.dart';
 import 'package:intershipflutter/businessLogic/InicatorProvider.dart';
 import 'package:provider/provider.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
   @override
+  State<SignupScreen> createState() => _SignupScreenState();
+  
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+
+
+  @override
   Widget build(BuildContext context) {
+    @override
+
     final provider = Provider.of<Inicatorprovider>(context);
     return  Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,10 +44,6 @@ class SignupScreen extends StatelessWidget {
                   Textfiled(" Last name",),Gap(25,),
                   Textfiled(" Email",),Gap(25,),
                   Textfiled(" Password",),Gap(25,),
-              
-                  // Password
-              
-                  // Forget password
                  
                   Gap(
                     30,
@@ -147,6 +153,6 @@ class SignupScreen extends StatelessWidget {
               
                  
                 ],
-              );;
+              );  
   }
 }

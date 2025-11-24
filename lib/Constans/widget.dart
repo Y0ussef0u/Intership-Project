@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intershipflutter/Constans/colors.dart';
 
-Widget mainbutton(
-  String text,
-  double width,
-  double height, {
-  VoidCallback? onPressed,  
-}) {
+Widget mainbutton(String text,double width,double height,{VoidCallback? onPressed,}) {
   return SizedBox(
     width: width,
     height: height,

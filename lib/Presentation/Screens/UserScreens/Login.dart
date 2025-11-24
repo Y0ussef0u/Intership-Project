@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intershipflutter/Constans/widget.dart';
-import 'package:intershipflutter/Presentation/Screens/UserScreens/Signup.dart';
 import 'package:intershipflutter/Presentation/Screens/UserScreens/SignupHolder.dart';
 import 'package:intershipflutter/businessLogic/InicatorProvider.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: !provider.show,
                   decoration: InputDecoration(
                     hintText: "Enter your Password",
-                    hintStyle: const TextStyle(fontSize: 15),
+                    hintStyle:  TextStyle(fontSize: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
                     contentPadding:
@@ -86,12 +85,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: GestureDetector(
                     onTap: () {},
                     child: Container(
-                      padding: EdgeInsets.only(bottom: 0.4), // مسافة خفيفة من النص
+                      padding: EdgeInsets.only(bottom: 0.4),
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
                             color: Colors.black87,
-                            width: 1.2, // سمك الخط تحت الكلمة
+                            width: 1.2,
                           ),
                         ),
                       ),
@@ -107,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Gap(40),
                 // Login button
-               mainbutton("Login", double.infinity,50),
+               mainbutton("Login", double.infinity,50, onPressed: (){}),
             
                 Gap(50),
             

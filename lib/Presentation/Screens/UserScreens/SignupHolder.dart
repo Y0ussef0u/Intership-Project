@@ -12,17 +12,19 @@ class Signupholder extends StatefulWidget {
 
   @override
   State<Signupholder> createState() => _SignupholderState();
+  
 }
 
 class _SignupholderState extends State<Signupholder> {
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<Inicatorprovider>(context);
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: mainColors().backgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 20),
+        padding:  EdgeInsets.symmetric(vertical: 45, horizontal: 20),
 
         child: Column(
           children: [
@@ -32,7 +34,7 @@ class _SignupholderState extends State<Signupholder> {
               children: [
 
 
-                provider.currentindex == 0
+                provider.currentindexuser == 0
                     ? SizedBox(width: 24)
                     : GestureDetector(
                         onTap: () {
@@ -52,11 +54,11 @@ class _SignupholderState extends State<Signupholder> {
                   children: List.generate(
                     4,
                     (index) => Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 2),
-                      width: provider.currentindex == index ? 38 : 5,
+                      margin:  EdgeInsets.symmetric(horizontal: 2),
+                      width: provider.currentindexuser == index ? 38 : 5,
                       height: 5,
                       decoration: BoxDecoration(
-                        color: provider.currentindex == index
+                        color: provider.currentindexuser == index
                             ? mainColors().primary
                             : Colors.grey.shade400,
                         borderRadius: BorderRadius.circular(20),
@@ -72,8 +74,8 @@ class _SignupholderState extends State<Signupholder> {
             Expanded(
               child: PageView(
                 controller: provider.pageController,
-                onPageChanged: provider.changeScreens,
-                children: const [
+                onPageChanged: provider.changeScreensUsers,
+                children:  [
                   SignupScreen(),
                   EnterPhoneScreen(),
                   VerifyphoneScreen(),

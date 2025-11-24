@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intershipflutter/Constans/colors.dart';
 import 'package:intershipflutter/Presentation/Screens/UserScreens/Login.dart';
+import 'package:intershipflutter/Presentation/Screens/UserScreens/SignupHolder.dart';
 import 'package:intershipflutter/businessLogic/InicatorProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class OnBoardingItem extends StatelessWidget {
     final provider = Provider.of<Inicatorprovider>(context);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+      padding:  EdgeInsets.symmetric(vertical: 30, horizontal: 20),
       child: Column(
         children: [
         
@@ -62,7 +63,7 @@ class OnBoardingItem extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const Icon(Icons.keyboard_arrow_right_sharp, size: 17),
+                     Icon(Icons.keyboard_arrow_right_sharp, size: 17),
                   ],
                 ),
               )
@@ -125,7 +126,9 @@ class OnBoardingItem extends StatelessWidget {
             Column(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: mainColors().primary,
                     minimumSize:  Size(double.infinity, 50),
@@ -135,20 +138,29 @@ class OnBoardingItem extends StatelessWidget {
                   child:  Text("Log in",
                       style: TextStyle(color: Colors.white)),
                 ),
-                const Gap(12),
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50),
-                    side: BorderSide(color: mainColors().primary),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                  ),
-                  child: Text(
-                    "Sign up",
-                    style: TextStyle(color: mainColors().primary),
+                 Gap(12),
+                            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Signupholder()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 50),
+                  elevation: 0,
+                  backgroundColor: Colors.white,
+                  side: BorderSide(color: mainColors().primary),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
+                child: Text(
+                  "Sign up",
+                  style: TextStyle(color: mainColors().primary),
+                ),
+              ),
+
               ],
             )
         ],
